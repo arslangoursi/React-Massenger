@@ -28,13 +28,19 @@ body {
 
   align-items: center;
 }
+.input__complete {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 3em 0em;
+}
 .input__container {
   background-color: transparent;
   border: 1px solid blueviolet;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin: 3em 0;
+  margin-bottom: 1em;
   border-radius: 0.5em;
   padding: 0.2em;
 }
@@ -51,6 +57,9 @@ body {
   color: rgb(159, 159, 159);
 }
 
+/* .input__container input:focus::placeholder {
+  background-color: transparent;
+} */
 .task__btn {
   color: white;
   background-color: blueviolet;
@@ -68,8 +77,44 @@ body {
   font-size: 2.5em;
   font-weight: bolder;
 }
+.input__info {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  justify-content: left;
+  align-items: flex-start;
+}
+.input__info__empty {
+  margin-right: 1em;
+  color: rgb(247, 62, 62);
+  margin-bottom: 1em;
+
+  border-radius: 50px;
+  text-decoration: underline;
+}
+
+.input__info__unique {
+  margin-right: 1em;
+  color: rgb(11, 197, 11);
+  margin-bottom: 1em;
+  border-radius: 50px;
+  text-decoration: underline;
+}
 .content__container {
   width: 100%;
+  height: 100%;
+
+  overflow-y: scroll;
+  padding: 0 1em;
+}
+.content__container::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+.content__container::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.343);
+
+  border-radius: 20px;
 }
 .task__entry {
   background-color: blueviolet;
@@ -84,17 +129,25 @@ body {
   display: flex;
   flex: 1;
 }
-.task__entry__edit {
-  margin: 0 1em;
+.task__entry__text__complete {
+  display: flex;
+  flex: 1;
+  text-decoration: line-through;
+  color: rgba(255, 255, 255, 0.589);
+}
+.task__entry__edit,
+.task__entry__delete,
+.task__entry__complete {
+  margin-left: 1em;
   cursor: pointer;
 }
 
-.task__entry__delete {
-  cursor: pointer;
-}
 .task__entry__edit:hover {
   color: rgb(181, 181, 181);
 }
 .task__entry__delete:hover {
+  color: rgb(181, 181, 181);
+}
+.task__entry__complete:hover {
   color: rgb(181, 181, 181);
 }
