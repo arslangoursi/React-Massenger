@@ -99,7 +99,7 @@ export default function App() {
               type="text"
               placeholder="Write task here..."
               name="name"
-              value={value}
+              defaultValue={value}
               onChange={handleChange}
             />
             <button className="task__btn" onClick={addTask}>
