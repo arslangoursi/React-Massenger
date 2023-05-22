@@ -5,7 +5,7 @@ import "./index.css";
 export default function App() {
   //-------------------------------------------------------------------------------------------useStates
 
-  const [value, setValue] = useState();
+  const [value, setValue] = useState("");
   const [todos, setTodos] = useState(
     JSON.parse(localStorage.getItem("list")) || [
       {
@@ -46,7 +46,7 @@ export default function App() {
       setUnique(true);
     } else {
       const task = {
-        id: value.toString(),
+        id: value?.toString(),
         value: value,
         complete: false,
         date: new Date(),
@@ -99,7 +99,7 @@ export default function App() {
               type="text"
               placeholder="Write task here..."
               name="name"
-              defaultValue={value}
+              value={value || ""}
               onChange={handleChange}
             />
             <button className="task__btn" onClick={addTask}>
